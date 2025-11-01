@@ -12,12 +12,19 @@ public class InfernoController : MonoBehaviour
     private Vector3 changeInFire;
     void Start()
     {
-        // wildfire.GetComponent<ParticleSystem>().scalingMode = ParticleSystemScalingMode.Shape;
-        wildfire.transform.localScale = new Vector3(0.2f,1f,0.2f);
-        changeInFire = new Vector3(0.002f, 0f, 0.002f);
+        // Prepare wildfire but keep it inactive until delay passes
+        if (wildfire != null)
+        {
+            wildfire.transform.localScale = new Vector3(0.2f, 1f, 0.2f);
+            wildfire.SetActive(false);
+        }
+        // start with no growth until fire is enabled
+        changeInFire = Vector3.zero;
         extinguisherOnWall.SetActive(true);
         extinguisherInHand.SetActive(false);
-        wildfire.SetActive(true);
+
+        // start wildfire after 5 seconds
+        StartCoroutine(StartFireAfterDelay(5f));
     }
 
     // Update is called once per frame
@@ -36,5 +43,16 @@ public class InfernoController : MonoBehaviour
         changeInFire -= new Vector3(0.004f, 0, 0.004f);
         extinguisherOnWall.SetActive(false);
         extinguisherInHand.SetActive(true);
+    }
+
+    private System.Collections.IEnumerator StartFireAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (wildfire != null)
+        {
+            wildfire.SetActive(true);
+            // start the normal growth rate
+            changeInFire = new Vector3(0.002f, 0f, 0.002f);
+        }
     }
 }

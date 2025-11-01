@@ -1,0 +1,4 @@
+Total prefabs scanned: 880
+Used prefabs: 505
+Unused prefabs: 375
+Reports written to: C:\HITESH\NITT\ARVR_PROJECT\VR_Adventures_For_Children\reports
