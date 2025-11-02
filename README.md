@@ -3,7 +3,7 @@
 Quick start and build instructions for the project.
 
 ## Prerequisites
-- Unity Editor (specify the version used; e.g., Unity 2020.3 LTS or Unity 2021.3 LTS).
+- Unity Editor version : Unity 2025
 - Visual Studio or VS Code (for editing scripts).
 - Git (to clone repository).
 - For Android builds: Android Build Support installed via Unity Hub.
@@ -53,13 +53,3 @@ cd VR_Adventures_For_Children
 - Hitesh — Earthquake module and UI feedback.
 - Rohit — Traffic module and NPC movement.
 - Kalyan — Inferno/fire module and extinguish interactions.
-
-## Next steps
-If you'd like, I can:
-- Update `REPORT.md` and `README.md` with the exact Unity Editor version and the real repository URL.
-- Create a `report.docx` or Google Docs export of the report.
-- Add small convenience scripts (like a one-click Play runner) or a sample exported build.
-
----
-
-Placeholders: please replace the repository URL and Unity version in the files above with the exact values before final submission.
