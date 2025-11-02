@@ -19,7 +19,8 @@ public class CollisionHandler : MonoBehaviour
 
     private void PopUpUIPosition()
     {
-        if (playerPosition != null) {
+        if (playerPosition != null)
+        {
             Vector3 canvasPosition = playerPosition.position + playerPosition.TransformDirection(offset);
             canvas.transform.position = canvasPosition;
             canvas.transform.rotation = playerPosition.rotation;
@@ -39,17 +40,6 @@ public class CollisionHandler : MonoBehaviour
             Debug.Log("Collision!");
             ShowPopUpUI("red", "DANGER!!!\nCross on Zebra Crossing!");
         }
-        if (collision.gameObject.CompareTag("Car")) // "Player" collides with the boundary
-        {
-            //ShowPopUpUI("CAREFULL!");
-            PopUpUIPosition();
-            Debug.Log("Collision!");
-            ShowPopUpUI("red", "DANGER!!!\nLook both sides before crossing!");
-            HidePopUpUI();
-            ShowPopUpUI("red", "GAME OVER!");
-            Invoke("goToHome", 3f);
-        }
-    
     }
 
     void goToHome()
@@ -77,7 +67,7 @@ public class CollisionHandler : MonoBehaviour
     private void ShowPopUpUI(string colour, string instructionsText)
     {
         if (popUpUI != null)
-        { 
+        {
             popUpUI.SetActive(true);
 
             Image img = popUpUI.GetComponent<Image>();
